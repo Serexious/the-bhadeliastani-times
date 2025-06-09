@@ -291,7 +291,7 @@ h2 {
 
 .scrolling-content {
   white-space: nowrap;
-  padding-right: 4rem;
+  padding-right: 0rem;
 }
 @keyframes scroll-left {
   0%   { transform: translateX(-100%); }
