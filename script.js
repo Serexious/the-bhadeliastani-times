@@ -71,29 +71,26 @@ async function loadArticles() {
 }
 
 window.onload = () => {
-  // Set default section
   showSection('top');
-
-  // Load articles into each section
   loadArticles();
 
-  // Highlight the first tab
   const navLinks = document.querySelectorAll('nav a');
   if (navLinks.length > 0) navLinks[0].classList.add('active-tab');
 
-  // === FIX FOR SCROLLING BAR LOOP ===
+  // Ensure the scrolling track fills screen immediately
   const track = document.getElementById("scrollingTrack");
-  if (track) {
-    const base = track.querySelector(".scrolling-content");
-    if (base) {
-      const width = base.offsetWidth;
-      const screenWidth = window.innerWidth;
-      const needed = Math.ceil((screenWidth * 2) / width);  // *2 ensures continuous loop
+  const content = track?.querySelector(".scrolling-content");
 
-      for (let i = 0; i < needed; i++) {
-        const clone = base.cloneNode(true);
-        track.appendChild(clone);
-      }
+  if (track && content) {
+    const contentWidth = content.offsetWidth;
+    const screenWidth = window.innerWidth;
+    const minWidth = screenWidth * 2;
+
+    let currentWidth = contentWidth;
+    while (currentWidth < minWidth) {
+      const clone = content.cloneNode(true);
+      track.appendChild(clone);
+      currentWidth += contentWidth;
     }
   }
 };
