@@ -277,31 +277,26 @@ h2 {
   font-weight: bold;
   height: 35px;
   overflow: hidden;
-  position: relative;
   white-space: nowrap;
-  display: flex;
-  align-items: center;
+  position: relative;
 }
 
 .scrolling-track {
   display: flex;
-  min-width: 200%
-  animation: scroll-right 30s linear infinite;
+  white-space: nowrap;
+  position: absolute;
+  will-change: transform;
+  animation: scrollRight 30s linear infinite;
 }
 
 .scrolling-content {
-  white-space: nowrap;
-  padding-right: 2rem;
+  padding: 0 2rem;
 }
 
-/* LEFT to RIGHT */
-@keyframes scroll-right {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+/* Animation: move entire track from left to right */
+@keyframes scrollRight {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 /* Responsive font sizing */
