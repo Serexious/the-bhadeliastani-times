@@ -261,7 +261,6 @@ h2 {
   font-family: Georgia, serif;
   font-size: 1.1em;
   font-weight: bold;
-  border-bottom: 1px solid #333;
   position: relative;
   z-index: 999;
 }
