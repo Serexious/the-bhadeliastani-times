@@ -267,17 +267,17 @@ h2 {
 
 .scrolling-wrapper {
   display: inline-flex;
-  animation: scroll-loop 30s linear infinite;
+  animation: scroll-loop-reverse 30s linear infinite;
 }
 
 .scrolling-wrapper span {
   padding-right: 2rem;
   white-space: nowrap;
 }
-  
-@keyframes scroll-loop {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+
+@keyframes scroll-loop-reverse {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 @media (max-width: 480px) {
