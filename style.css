@@ -279,22 +279,21 @@ h2 {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .scrolling-track {
   display: flex;
-  white-space: nowrap;
-  position: absolute;
-  will-change: transform;
-  animation: scrollRight 30s linear infinite;
+  width: max-content;
+  animation: scroll-right 20s linear infinite;
 }
 
 .scrolling-content {
-  padding: 0 2rem;
+  white-space: nowrap;
+  padding-right: 2rem;
 }
-
-/* Animation: move entire track from left to right */
-@keyframes scrollRight {
+@keyframes scroll-right {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
