@@ -254,30 +254,29 @@ h2 {
   background-color: #000;
   color: #fbd24d;
   overflow: hidden;
-  white-space: nowrap;
   height: 35px;
   display: flex;
   align-items: center;
   font-family: Georgia, serif;
   font-size: 1.1em;
   font-weight: bold;
-  position: relative;
-  z-index: 999;
+  white-space: nowrap;
 }
 
 .scrolling-wrapper {
-  display: inline-flex;
-  animation: scroll-loop-reverse 30s linear infinite;
+  display: flex;
+  animation: scroll-loop 30s linear infinite;
+  width: max-content;
 }
 
-.scrolling-wrapper span {
-  padding-right: 0rem;
-  white-space: pre;
+.scrolling-content {
+  white-space: nowrap;
+  padding-right: 2rem;
 }
 
-@keyframes scroll-loop-reverse {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+@keyframes scroll-loop {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @media (max-width: 480px) {
