@@ -273,33 +273,35 @@ h2 {
   background-color: #000;
   color: #fbd24d;
   overflow: hidden;
-  white-space: nowrap;
   height: 35px;
   display: flex;
   align-items: center;
   font-family: Georgia, serif;
   font-size: 1.1em;
   font-weight: bold;
+  white-space: nowrap;
   position: relative;
-  z-index: 1000;
 }
 
 .scrolling-track {
   display: flex;
-  width: fit-content;
-  animation: scroll-right 40s linear infinite;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
 }
 
 .scrolling-text {
   white-space: nowrap;
-  padding-right: 4rem;
-  flex-shrink: 0;
+  padding-right: 2rem;
 }
 
-/* Keyframes for scrolling left-to-right loop */
-@keyframes scroll-right {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+/* Keyframes for continuous scroll */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 /* Mobile adjustments */
