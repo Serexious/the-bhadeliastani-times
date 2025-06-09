@@ -62,7 +62,7 @@ header h1:hover {
 }
 
 .article-box:hover {
-  background-color: #dddd00;
+  background-color: #c0c0c0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
