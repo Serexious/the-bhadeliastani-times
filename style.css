@@ -285,7 +285,7 @@ h2 {
 
 .scrolling-track {
   display: flex;
-  width: max-content;
+  min-width: 200%
   animation: scroll-right 30s linear infinite;
 }
 
