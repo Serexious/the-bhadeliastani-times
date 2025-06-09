@@ -284,6 +284,17 @@ h2 {
     flex: 1 0 100%;
   }
 
+@media (max-width: 768px) {
+  .scrolling-bar {
+    font-size: 0.9em;
+    height: 28px;
+  }
+
+  .scrolling-wrapper {
+    animation-duration: 20s; 
+  }
+}
+
 
 
 }
