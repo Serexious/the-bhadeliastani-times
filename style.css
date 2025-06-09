@@ -265,25 +265,22 @@ h2 {
 
 .scrolling-wrapper {
   display: flex;
-  animation: scroll-loop 30s linear infinite;
   width: max-content;
+  animation: scroll-right 30s linear infinite;
 }
 
 .scrolling-content {
-  white-space: nowrap;
-  padding-right: 0rem;
+  white-space: pre;
+  padding-left: 0rem;
 }
 
-@keyframes scroll-loop {
+/* Keyframes for rightward scroll */
+@keyframes scroll-right {
   0%   { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
 
-@media (max-width: 480px) {
-  nav a {
-    flex: 1 0 100%;
-  }
-
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
   .scrolling-bar {
     font-size: 0.9em;
@@ -292,6 +289,12 @@ h2 {
 
   .scrolling-wrapper {
     animation-duration: 20s; 
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    flex: 1 0 100%;
   }
 }
 
