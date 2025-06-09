@@ -5,8 +5,8 @@ body {
 }
 
 header {
-  background-color: #0a1a2f;
-  color: #fbd24d;
+  background-color: #091821;
+  color: #e6a41c;
   padding: 20px;
   text-align: center;
   position: relative;
@@ -36,7 +36,7 @@ header h1 {
 }
 
 header h1:hover {
-  color: #f5b32f;
+  color: #fca903;
 }
 
 .anthem-link {
