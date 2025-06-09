@@ -49,23 +49,25 @@ async function loadArticles() {
   };
 
   articles.forEach(article => {
-    const articleHTML = document.createElement('article');
-    articleHTML.className = "article-box";
-    articleHTML.innerHTML = `
-      <img src="${article.image}" loading="lazy" alt="Article thumbnail">
-      <strong>${article.title}</strong>
-      <div class="article-tags">Tags: ${article.tags.join(', ')}</div>
-      <a href="#" onclick='displayArticleFromJSON(${JSON.stringify(article).replace(/'/g, "\\'").replace(/"/g, '&quot;')}); return false;'>View</a>
-    `;
+  const articleHTML = document.createElement('article');
+  articleHTML.className = "article-box";
+  articleHTML.onclick = () => displayArticleFromJSON(article); // ✅ Click anywhere to open
 
-    const primaryTag = article.tags.find(tag =>
-      Object.keys(sectionMap).includes(tag.toLowerCase())
-    ) || "top stories";
+  articleHTML.innerHTML = `
+    <img src="${article.image}" loading="lazy" alt="Article thumbnail">
+    <strong>${article.title}</strong>
+    <div class="article-tags">Tags: ${article.tags.join(', ')}</div>
+    <a href="#" style="color:#0a1a2f; text-decoration: underline;">View</a>
+  `;
 
-    const section = sectionMap[primaryTag.toLowerCase()];
-    const grid = section.querySelector('.article-grid');
-    grid.appendChild(articleHTML);
-  });
+  const primaryTag = article.tags.find(tag =>
+    Object.keys(sectionMap).includes(tag.toLowerCase())
+  ) || "top stories";
+
+  const section = sectionMap[primaryTag.toLowerCase()];
+  const grid = section.querySelector('.article-grid');
+  grid.appendChild(articleHTML);
+});
 }
 
 window.onload = () => {
