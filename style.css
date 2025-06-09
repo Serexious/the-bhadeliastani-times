@@ -256,11 +256,11 @@ h2 {
   }
 
   .scrolling-bar {
-  background-color: #000;
+  background-color: #000000;
   color: #fbd24d;
   overflow: hidden;
   white-space: nowrap;
-  height: 30px;
+  height: 35px;
   display: flex;
   align-items: center;
   font-family: Georgia, serif;
@@ -278,11 +278,7 @@ h2 {
 }
 
 @keyframes scroll-right {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 }
