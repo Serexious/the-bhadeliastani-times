@@ -250,12 +250,7 @@ h2 {
   }
 }
 
-@media (max-width: 480px) {
-  nav a {
-    flex: 1 0 100%;
-  }
-
-  .scrolling-bar {
+.scrolling-bar {
   background-color: #000000;
   color: #fbd24d;
   overflow: hidden;
@@ -281,5 +276,12 @@ h2 {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
+
+@media (max-width: 480px) {
+  nav a {
+    flex: 1 0 100%;
+  }
+
+
 
 }
