@@ -73,6 +73,20 @@ async function loadArticles() {
 window.onload = () => {
   showSection('top');
   loadArticles();
+
   const navLinks = document.querySelectorAll('nav a');
   if (navLinks.length > 0) navLinks[0].classList.add('active-tab');
+
+  // === Scrolling ticker logic ===
+  const track = document.getElementById('scrollingTrack');
+  if (track) {
+    const content = track.querySelector('.scrolling-content');
+    const contentWidth = content.offsetWidth;
+    const repeatCount = Math.ceil(window.innerWidth / contentWidth) + 4;
+
+    for (let i = 0; i < repeatCount; i++) {
+      const clone = content.cloneNode(true);
+      track.appendChild(clone);
+    }
+  }
 };
