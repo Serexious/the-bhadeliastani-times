@@ -71,22 +71,29 @@ async function loadArticles() {
 }
 
 window.onload = () => {
+  // Set default section
   showSection('top');
+
+  // Load articles into each section
   loadArticles();
 
+  // Highlight the first tab
   const navLinks = document.querySelectorAll('nav a');
   if (navLinks.length > 0) navLinks[0].classList.add('active-tab');
 
-  // === Scrolling ticker logic ===
-  const track = document.getElementById('scrollingTrack');
+  // === FIX FOR SCROLLING BAR LOOP ===
+  const track = document.getElementById("scrollingTrack");
   if (track) {
-    const content = track.querySelector('.scrolling-content');
-    const contentWidth = content.offsetWidth;
-    const repeatCount = Math.ceil(window.innerWidth / contentWidth) + 4;
+    const base = track.querySelector(".scrolling-content");
+    if (base) {
+      const width = base.offsetWidth;
+      const screenWidth = window.innerWidth;
+      const needed = Math.ceil((screenWidth * 2) / width);  // *2 ensures continuous loop
 
-    for (let i = 0; i < repeatCount; i++) {
-      const clone = content.cloneNode(true);
-      track.appendChild(clone);
+      for (let i = 0; i < needed; i++) {
+        const clone = base.cloneNode(true);
+        track.appendChild(clone);
+      }
     }
   }
 };
