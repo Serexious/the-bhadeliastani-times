@@ -271,8 +271,8 @@ h2 {
 }
 
 .scrolling-wrapper span {
-  padding-right: 2rem;
-  white-space: nowrap;
+  padding-right: 0rem;
+  white-space: pre;
 }
 
 @keyframes scroll-loop-reverse {
