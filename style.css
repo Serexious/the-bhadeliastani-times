@@ -272,30 +272,30 @@ h2 {
 .scrolling-bar {
   background-color: #000;
   color: #fbd24d;
-  overflow: hidden;
-  height: 35px;
-  display: flex;
-  align-items: center;
   font-family: Georgia, serif;
   font-size: 1.1em;
   font-weight: bold;
-  white-space: nowrap;
+  height: 35px;
+  overflow: hidden;
   position: relative;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .scrolling-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-right 30s linear infinite;
 }
 
-.scrolling-text {
+.scrolling-content {
   white-space: nowrap;
   padding-right: 2rem;
 }
 
-/* Keyframes for continuous scroll */
-@keyframes scroll-left {
+/* LEFT to RIGHT */
+@keyframes scroll-right {
   0% {
     transform: translateX(-100%);
   }
@@ -304,14 +304,15 @@ h2 {
   }
 }
 
-/* Mobile adjustments */
+/* Responsive font sizing */
 @media (max-width: 768px) {
   .scrolling-bar {
     font-size: 0.95em;
     height: 30px;
   }
+
   .scrolling-track {
-    animation-duration: 30s;
+    animation-duration: 20s;
   }
 }
 
