@@ -84,7 +84,7 @@ window.onload = () => {
   if (track && content) {
     const contentWidth = content.offsetWidth;
     const screenWidth = window.innerWidth;
-    const minWidth = screenWidth * 2;
+    const minWidth = screenWidth * 4;
 
     let currentWidth = contentWidth;
     while (currentWidth < minWidth) {
